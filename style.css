@@ -1,6 +1,6 @@
-html,
 body {
-  margin: 0px;
+  margin: 0;
+  font-size: 35px;
 }
 
 .calendar {
@@ -9,31 +9,276 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   display: grid;
-  grid-template-columns: repeat(7, 100px);
-  grid-template-rows: repeat(5, 100px);
+  grid-template: repeat(6, 100px)/repeat(7, 100px);
+  grid-gap: 2px;
 }
 
 .calendar > div {
   justify-content: stretch;
-  line-height: 300px;
-  text-align: center;
-  background-color: blue;
-  border: 1px solid red;
+  background-color: #eeeeee;
+  border: 1px solid black;
 }
 
-.calendar > div:nth-child(4)::after::before {
-  content: "test";
-  color: black;
-  background: green;
+.calendar-tue > :first-of-type {
+  grid-column: 2/3;
 }
 
+.calendar-wed > :first-of-type {
+  grid-column: 3/4;
+}
 
-/*for $i from 1 through 31 {
-  .calendar > div:nth-child(i) {
-    content: '1';
-    color: black;
-    background: green;
-  }
-}*/
+.calendar-thu > :first-of-type {
+  grid-column: 4/5;
+}
+
+.calendar-fri > :first-of-type {
+  grid-column: 5/6;
+}
+
+.calendar-sat > :first-of-type {
+  grid-column: 6/7;
+}
+
+.calendar-sun > :first-of-type {
+  grid-column: 7/-1;
+}
+
+.calendar > div:hover {
+  background-color: #f5c2cb;
+  transform: translateY(-20px);
+  transition: all 0.5s ease;
+}
+
+.calendar-30 > :last-child {
+  display: none;
+}
+
+.calendar-29 > :last-child,
+.calendar-29 > :nth-child(30) {
+  display: none;
+}
+
+.calendar-28 > :last-child,
+.calendar-28 > :nth-child(30),
+.calendar-28 > :nth-child(29) {
+  display: none;
+}
+
+.calendar > div:nth-child(1)::after {
+  content: "1";
+  background-color: inherit;
+  position: absolute;
+  margin: 33px;
+}
+
+.calendar > div:nth-child(2)::after {
+  content: "2";
+  background-color: inherit;
+  position: absolute;
+  margin: 33px;
+}
+
+.calendar > div:nth-child(3)::after {
+  content: "3";
+  background-color: inherit;
+  position: absolute;
+  margin: 33px;
+}
+
+.calendar > div:nth-child(4)::after {
+  content: "4";
+  background-color: inherit;
+  position: absolute;
+  margin: 33px;
+}
+
+.calendar > div:nth-child(5)::after {
+  content: "5";
+  background-color: inherit;
+  position: absolute;
+  margin: 33px;
+}
+
+.calendar > div:nth-child(6)::after {
+  content: "6";
+  background-color: inherit;
+  position: absolute;
+  margin: 33px;
+}
+
+.calendar > div:nth-child(7)::after {
+  content: "7";
+  background-color: inherit;
+  position: absolute;
+  margin: 33px;
+}
+
+.calendar > div:nth-child(8)::after {
+  content: "8";
+  background-color: inherit;
+  position: absolute;
+  margin: 33px;
+}
+
+.calendar > div:nth-child(9)::after {
+  content: "9";
+  background-color: inherit;
+  position: absolute;
+  margin: 33px;
+}
+
+.calendar > div:nth-child(10)::after {
+  content: "10";
+  background-color: inherit;
+  position: absolute;
+  margin: 33px;
+}
+
+.calendar > div:nth-child(11)::after {
+  content: "11";
+  background-color: inherit;
+  position: absolute;
+  margin: 33px;
+}
+
+.calendar > div:nth-child(12)::after {
+  content: "12";
+  background-color: inherit;
+  position: absolute;
+  margin: 33px;
+}
+
+.calendar > div:nth-child(13)::after {
+  content: "13";
+  background-color: inherit;
+  position: absolute;
+  margin: 33px;
+}
+
+.calendar > div:nth-child(14)::after {
+  content: "14";
+  background-color: inherit;
+  position: absolute;
+  margin: 33px;
+}
+
+.calendar > div:nth-child(15)::after {
+  content: "15";
+  background-color: inherit;
+  position: absolute;
+  margin: 33px;
+}
+
+.calendar > div:nth-child(16)::after {
+  content: "16";
+  background-color: inherit;
+  position: absolute;
+  margin: 33px;
+}
+
+.calendar > div:nth-child(17)::after {
+  content: "17";
+  background-color: inherit;
+  position: absolute;
+  margin: 33px;
+}
+
+.calendar > div:nth-child(18)::after {
+  content: "18";
+  background-color: inherit;
+  position: absolute;
+  margin: 33px;
+}
+
+.calendar > div:nth-child(19)::after {
+  content: "19";
+  background-color: inherit;
+  position: absolute;
+  margin: 33px;
+}
+
+.calendar > div:nth-child(20)::after {
+  content: "20";
+  background-color: inherit;
+  position: absolute;
+  margin: 33px;
+}
+
+.calendar > div:nth-child(21)::after {
+  content: "21";
+  background-color: inherit;
+  position: absolute;
+  margin: 33px;
+}
+
+.calendar > div:nth-child(22)::after {
+  content: "22";
+  background-color: inherit;
+  position: absolute;
+  margin: 33px;
+}
+
+.calendar > div:nth-child(23)::after {
+  content: "23";
+  background-color: inherit;
+  position: absolute;
+  margin: 33px;
+}
+
+.calendar > div:nth-child(24)::after {
+  content: "24";
+  background-color: inherit;
+  position: absolute;
+  margin: 33px;
+}
+
+.calendar > div:nth-child(25)::after {
+  content: "25";
+  background-color: inherit;
+  position: absolute;
+  margin: 33px;
+}
+
+.calendar > div:nth-child(26)::after {
+  content: "26";
+  background-color: inherit;
+  position: absolute;
+  margin: 33px;
+}
+
+.calendar > div:nth-child(27)::after {
+  content: "27";
+  background-color: inherit;
+  position: absolute;
+  margin: 33px;
+}
+
+.calendar > div:nth-child(28)::after {
+  content: "28";
+  background-color: inherit;
+  position: absolute;
+  margin: 33px;
+}
+
+.calendar > div:nth-child(29)::after {
+  content: "29";
+  background-color: inherit;
+  position: absolute;
+  margin: 33px;
+}
+
+.calendar > div:nth-child(30)::after {
+  content: "30";
+  background-color: inherit;
+  position: absolute;
+  margin: 33px;
+}
+
+.calendar > div:nth-child(31)::after {
+  content: "31";
+  background-color: inherit;
+  position: absolute;
+  margin: 33px;
+}
 
 /*# sourceMappingURL=style.css.map */
