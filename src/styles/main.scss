@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 30px;
@@ -19,7 +23,6 @@ body {
   justify-content: center;
   align-items: center;
 
-  box-sizing: border-box;
   margin: 1px 0 0 1px;
   width: 100px;
   height: 100px;
@@ -73,7 +76,7 @@ $start_days: (
 @each $num, $day in $start_days {
   
   .calendar-#{$day} .calendar__day:first-child {
-    margin-left: ($num - 1) * 100px + $num + 1px;
+    margin-left: ($num - 1) * 100px + $num;
   }
 
 }
