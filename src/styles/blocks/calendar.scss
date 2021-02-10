@@ -4,8 +4,8 @@
   flex-wrap: wrap;
   width: 7 * ($calendarDaySize + $marginSize) + 1px;
 
-  &__day {
-    @include centeredFlex;
+  > div {
+    @include centeredFlex;    
     display: none;
 
     margin: $marginSize 0 0 $marginSize;
@@ -14,56 +14,44 @@
   
     background-color: #eee;
     border: 1px solid black;
-  }
-  
-  &__day:hover {
-    animation-name: jumpup;
-    animation-duration: 0.5s;
-  }
-  
-  @keyframes jumpup {
-    100% {
-      position: relative;
-      bottom: 20px;
-      background-color: pink;
+
+    &:hover {
+      animation-name: jumpup;
+      animation-duration: 0.5s;
     }
-  }
-  
-  @for $i from 1 through 31 {
-  
-    &__day:nth-child(#{$i}):before {
-      content: "" + $i;
-    }
-  
-  }
-  
-  $mon_days: (28, 29, 30, 31);
-  
-  @each $amount in $mon_days {
-  
-    $child : $amount + 1;
-    .calendar-#{$amount} &__day:nth-child(-n + #{$amount}) {
-      display: block;
-    }
-      
-  }
-  
-  $start_days: (
-    1 : "mon", 
-    2 : "tue", 
-    3 : "wed", 
-    4 : "thu", 
-    5 : "fri", 
-    6 : "sat", 
-    7 : "sun"
-  );
-  
-  @each $num, $day in $start_days {
     
-    .calendar-#{$day} &__day:first-child {
-      margin-left: ($num - 1) * $calendarDaySize + $num * $marginSize;
+    @keyframes jumpup {
+      100% {
+        position: relative;
+        transform: translateY(-20px);
+        background-color: pink;
+      }
     }
-  
+    
   }
+
+}
+
+@for $i from 1 through 31 {
+
+  .calendar > div:nth-child(#{$i})::after {
+    content: "#{$i}";
+  }
+
+}
+
+@each $amount in $mon_days {
+
+  .calendar-#{$amount} > div:nth-child(-n + #{$amount}) {
+    display: flex;
+  }
+    
+}
+
+@each $num, $day in $start_days {
   
+  .calendar-#{$day} > div:first-child {
+    margin-left: ($num - 1) * $calendarDaySize + $num * $marginSize;
+  }
+
 }
