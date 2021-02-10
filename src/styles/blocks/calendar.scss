@@ -2,14 +2,14 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: calc(7 * #{$calendarDaySize} + 8px);
+  width: 7 * ($calendarDaySize + $marginSize) + 1px;
 
   &__day {
     @include centeredFlex;
     display: none;
 
-    margin: 1px 0 0 1px;
-    width: $calendarDaySize;
+    margin: $marginSize 0 0 $marginSize;
+    flex: 0 1 $calendarDaySize;
     height: $calendarDaySize;
   
     background-color: #eee;
@@ -61,7 +61,7 @@
   @each $num, $day in $start_days {
     
     .calendar-#{$day} &__day:first-child {
-      margin-left: ($num - 1) * $calendarDaySize + $num;
+      margin-left: ($num - 1) * $calendarDaySize + $num * $marginSize;
     }
   
   }
