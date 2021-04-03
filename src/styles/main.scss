@@ -37,6 +37,7 @@ body {
     height: $block-size;
     border: 1px solid #000;
     background-color: #eee;
+    transition-duration: 0.5s;
   }
 
   $days:
@@ -57,14 +58,13 @@ body {
   &__day:hover {
     cursor: pointer;
     background-color: #ffbfcb;
-    animation: 0.5s linear forwards slidein;
-    transition-duration: 0.5s;
+    animation: 0.5s forwards slidein;
   }
 }
 
 @keyframes slidein {
   from {
-    transform: translate(0%);
+    transform: translate(0, 0);
   }
 
   to {
