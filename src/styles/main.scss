@@ -1,0 +1,11 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "./reset.scss";
+@import "./calendar.scss";
+
+.content {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
